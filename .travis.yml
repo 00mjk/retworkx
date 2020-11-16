@@ -43,6 +43,7 @@ jobs:
       arch: arm64
     - stage: deploy
       arch: arm64
+      if: tag IS present
       services:
         - docker
       before_install:
@@ -62,6 +63,7 @@ jobs:
         - twine upload wheelhouse/*
     - stage: deploy
       arch: ppc64le
+      if: tag IS present
       services:
         - docker
       before_install:
